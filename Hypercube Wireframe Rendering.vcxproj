@@ -92,6 +92,7 @@
   <ItemGroup>
     <ClCompile Include="Hypercube Wireframe Rendering.cpp" />
     <ClCompile Include="HyperCube.cpp" />
+    <ClCompile Include="HyperQuad.cpp" />
     <ClCompile Include="HyperTriangle.cpp" />
     <ClCompile Include="HyperVertex.cpp" />
     <ClCompile Include="stdafx.cpp">

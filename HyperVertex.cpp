@@ -3,7 +3,7 @@
 
 HyperVertex::HyperVertex( int n , ... )
 {
-	Depth_Coefficient = 0.013;
+	Depth_Coefficient = 0.013f;
 
 	va_list args;
 	va_start( args, n );
@@ -14,7 +14,7 @@ HyperVertex::HyperVertex( int n , ... )
 
 HyperVertex::HyperVertex( void )
 {
-	Depth_Coefficient = 0.013;
+	Depth_Coefficient = 0.013f; //Field of view
 }
 
 HyperVertex::~HyperVertex( void )
@@ -100,10 +100,11 @@ HyperVertex HyperVertex::operator/( float In_Float )
 sf::Vector2<float> HyperVertex::Project2D( void )
 {
 	HyperVertex TempHyp = HyperVertex( *this );
+	std::vector<float>::reverse_iterator it;
 
-	for( int i = capacity() - 1; i > 1; i-- )
+	for( it = TempHyp.rbegin(); it != TempHyp.rend(); it++ )
 	{
-		TempHyp = TempHyp / ( TempHyp[i] * Depth_Coefficient );
+		TempHyp = TempHyp / ( (*it) * Depth_Coefficient );
 	}
 	return sf::Vector2<float>( TempHyp[0], TempHyp[1] );
 }
