@@ -82,7 +82,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HyperCube.h" />
     <ClInclude Include="HyperQuad.h" />
     <ClInclude Include="HyperTriangle.h" />
     <ClInclude Include="HyperVertex.h" />
@@ -91,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hypercube Wireframe Rendering.cpp" />
-    <ClCompile Include="HyperCube.cpp" />
     <ClCompile Include="HyperQuad.cpp" />
     <ClCompile Include="HyperTriangle.cpp" />
     <ClCompile Include="HyperVertex.cpp" />
@@ -99,6 +97,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,13 +12,16 @@ public:
 	HyperVertex( void );
 	~HyperVertex( void );
 
-	HyperVertex operator+( HyperVertex In_HV );
-	HyperVertex operator-( HyperVertex In_HV );
-	HyperVertex operator*( HyperVertex In_HV );
-	HyperVertex operator/( HyperVertex In_HV );
-	HyperVertex operator/( float In_Float );
-	sf::Vector2<float> Project2D( void );
-	std::string ToString( void );
+	HyperVertex operator+( const HyperVertex In_HV ) const;
+	HyperVertex operator-( const HyperVertex In_HV ) const;
+	HyperVertex operator*( const HyperVertex In_HV ) const;
+	HyperVertex operator/( const HyperVertex In_HV ) const;
+	HyperVertex operator/( const float In_Float ) const;
+	HyperVertex static Rotate( const HyperVertex In_Source, const HyperVertex In_Rotate, const float In_Angle );
+	float static DotProduct( const HyperVertex In_HV1, const HyperVertex In_HV2 );
+	HyperVertex static ExteriorProduct( const HyperVertex In_HV1, const HyperVertex In_HV2 ); //Not implemented
+	sf::Vector2<float> Project2D( void ) const;
+	std::string ToString( void ) const;
 
 private:
 	float Depth_Coefficient;
